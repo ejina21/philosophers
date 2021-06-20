@@ -22,7 +22,7 @@ void	print_message(t_philo *philo, int mess)
 	pthread_mutex_lock(&philo->param->writing);
 	if (!flag)
 	{
-		printf("time:%u  ", get_time() - philo->param->start_time);
+		printf("%u  ", get_time() - philo->param->start_time);
 		if (mess != 5)
 			printf("%d", philo->id + 1);
 		if (mess >= 4)
