@@ -68,7 +68,7 @@ int	pull_param(int argc, char **argv, t_param *param)
 	if (param->count_philo < 1 || param->count_philo > 200
 		|| param->time_to_die < 60
 		|| param->time_to_eat < 60 || param->time_to_sleep < 60
-		|| param->count_eat_all < 0)
+		|| param->count_eat_all < 1)
 		return (1);
 	param->philo = malloc(sizeof(t_philo) * param->count_philo);
 	if (!(param->philo))
