@@ -62,13 +62,16 @@ int	pull_param(int argc, char **argv, t_param *param)
 	param->philo = NULL;
 	param->forks = NULL;
 	if (argc == 6)
+	{
 		param->count_eat_all = ft_atoi(argv[5]);
+		if (param->count_eat_all < 1)
+			return (1);
+	}
 	else
 		param->count_eat_all = 0;
 	if (param->count_philo < 1 || param->count_philo > 200
 		|| param->time_to_die < 60
-		|| param->time_to_eat < 60 || param->time_to_sleep < 60
-		|| param->count_eat_all < 1)
+		|| param->time_to_eat < 60 || param->time_to_sleep < 60)
 		return (1);
 	param->philo = malloc(sizeof(t_philo) * param->count_philo);
 	if (!(param->philo))
